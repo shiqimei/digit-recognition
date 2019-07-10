@@ -1,3 +1,6 @@
+import 'babel-polyfill';
+import 'babel-core/register';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';

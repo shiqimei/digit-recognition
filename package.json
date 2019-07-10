@@ -4,8 +4,11 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.2.0",
+    "babel-core": "^6.26.3",
+    "customize-cra": "^0.2.14",
     "fabric": "^3.2.0",
     "react": "^16.8.6",
+    "react-app-rewired": "^2.1.3",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
     "react-scripts": "3.0.1",
@@ -13,11 +16,19 @@
     "redux-saga": "^1.0.5",
     "styled-components": "^4.3.2"
   },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-polyfill": "^6.26.0"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject"
   },
   "eslintConfig": {
     "extends": "react-app"
