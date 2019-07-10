@@ -5,7 +5,6 @@ class Fabric extends React.Component {
 	componentDidMount() {
 		const fabricCanvas = window.fabricCanvas;
 		const el = ReactDOM.findDOMNode(this);
-
 		fabricCanvas.initialize(el);
 	}
 
