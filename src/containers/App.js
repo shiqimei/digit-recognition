@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
 
+import Card from '@material-ui/core/Card';
 import Fabric from './Fabric';
 
 function App() {
   return (
-    <Fabric />
+    <Card className='card-canvas'>
+      <Fabric />
+    </Card>
   );
 }
 
