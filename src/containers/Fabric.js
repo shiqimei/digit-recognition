@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import styled from 'styled-components';
 
 import { fabric } from 'fabric';
 
@@ -25,13 +24,9 @@ class Fabric extends React.Component {
 
 	render() {
 		return (
-			<FabricElement id="container" />
+			<canvas id="container"></canvas>
 		);
 	}
 };
-
-const FabricElement = styled.canvas`
-	border: 1px solid;
-`;
 
 export default Fabric;
