@@ -4,6 +4,9 @@ import './index.css';
 import App from './containers/App';
 import { fabric } from 'fabric';
 
+import { Provider } from 'react-redux';
+import reduxStore from './lib/createStore';
+
 // Global Variables
 window.fabricCanvas = new fabric.Canvas('drawing', {
 	width: 300,
@@ -17,4 +20,11 @@ window.fabricCanvas = new fabric.Canvas('drawing', {
 	}
 });
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const rootElement = document.getElementById('root');
+
+ReactDOM.render(
+	<Provider store={reduxStore}>
+		<App />
+	</Provider>,
+	rootElement
+);
