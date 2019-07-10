@@ -10,6 +10,11 @@
   margin-top: 20px;
 }
 
+.MuiButton-containedPrimary {
+  margin-left: 10px!important;
+  margin-right: 10px!important;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
