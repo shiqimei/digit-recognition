@@ -1,8 +1,9 @@
 import { put, takeLatest, all } from 'redux-saga/effects';
-import { APP } from '../actions/actionsTypes';
+import { APP } from '../actions/actionTypes';
 
 const handleSaveImage = function* handleSaveImage({ canvas }) {
-	console.log(canvas);
+	const dataURL = canvas.toDataURL( "image/png" );
+	console.log(dataURL)
 }
 
 const root = function* root() {
