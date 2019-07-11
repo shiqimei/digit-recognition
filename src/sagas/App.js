@@ -9,8 +9,8 @@ const handleRecognizeRequest = function* handleRecognizeRequest({ blob }) {
 
 const handleSaveImage = function* handleSaveImage({ canvas }) {
 	yield canvas.toBlob(blob => {
-		saveAs(blob, `${ randomString(20) }.png`);
-	});
+		saveAs(blob, `${ randomString(20) }.jpg`);
+	}, 'image/jpeg');
 }
 
 const root = function* root() {
