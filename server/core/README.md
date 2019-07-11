@@ -9,3 +9,4 @@
 3. [Pytorch 保存模型与加载模型](https://zhuanlan.zhihu.com/p/38056115)
 4. [pytorch中torch.max函数用法](http://www.manongjc.com/article/35673.html)
 5. [Pytorch中Tensor与各种图像格式的相互转化](https://oldpan.me/archives/pytorch-tensor-image-transform)
+6. [python base64 编解码，转换成Opencv，PIL.Image图片格式](https://blog.csdn.net/dcrmg/article/details/80542665)
