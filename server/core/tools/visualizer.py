@@ -2,10 +2,12 @@
 Visualize the MNIST dataset
 """
 
+import os, sys
 import matplotlib.pyplot as plt
+sys.path.insert(0, os.path.abspath('..'))
 from utils.load_mnist import load_mnist
 
-images, labels = load_mnist('./dataset/MNIST/raw/')
+images, labels = load_mnist('../dataset/MNIST/raw/')
 
 fig, ax = plt.subplots(
     nrows=2,
