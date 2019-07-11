@@ -40,8 +40,7 @@ def evaluate(config):
             _, predicted = torch.max(outputs.data, 1)
             total += labels.size(0)
             correct += (predicted == labels).sum().item()
-
-    print('Accuracy of the network on the 10000 test images: {} %'.format(100 * correct / total))
+        print('Accuracy of the network on the 10000 test images: {} %'.format(100 * correct / total))
 
 if __name__ == "__main__":
 
