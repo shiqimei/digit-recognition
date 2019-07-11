@@ -12,15 +12,10 @@ import reduxStore from './lib/createStore';
 
 // Global Variables
 window.fabricCanvas = new fabric.Canvas('drawing', {
-	width: 300,
-	height: 300,
+	width: 28,
+	height: 28,
 	isDrawingMode: true,
-	freeDrawingBrush: {
-		width: 100
-	},
-	freeDrawingBrush: {
-		width: 10
-	}
+	backgroundColor: '#ffffff'
 });
 
 const rootElement = document.getElementById('root');
