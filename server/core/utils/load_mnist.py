@@ -20,6 +20,3 @@ def load_mnist(path, kind='train'):
         images = np.fromfile(imgpath,
                              dtype=np.uint8).reshape(len(labels), 784)
     return images, labels
-
-data = load_mnist('../dataset/MNIST/raw/')
-print(len(data[0]))
