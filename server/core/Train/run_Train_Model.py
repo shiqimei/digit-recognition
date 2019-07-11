@@ -1,21 +1,24 @@
 """
 Train handwritten digits recognition model
 """
+
 import torch
 import os
 import torch.nn as nn
 import torchvision
 import torchvision.transforms as transforms
 from Config import *
+from FCNet import *
 
 def train():
 
-    # initialize training configuration
+    # Initialize configurations
     config = Config()
 
+    # Use GPU if cuda is available
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    # Load MNIST dataset
+    # Load MNIST training dataset
     train_dataset = torchvision.datasets.MNIST(root=config.dataset_root, 
                                             train=True, 
                                             transform=transforms.ToTensor(),  
@@ -25,38 +28,23 @@ def train():
                                             batch_size=config.batch_size, 
                                             shuffle=True)
 
-    # Fully Connected Neural Network with one hidden layer
-    class NeuralNet(nn.Module):
-        def __init__(self, input_size, hidden_size, num_classes):
-            super(NeuralNet, self).__init__()
-            self.fc1 = nn.Linear(config.input_size, hidden_size) 
-            self.relu = nn.ReLU()
-            self.fc2 = nn.Linear(config.hidden_size, num_classes)  
-        
-        def forward(self, x):
-            out = self.fc1(x)
-            out = self.relu(out)
-            out = self.fc2(out)
-            return out
-    
-    model = NeuralNet(config.input_size,
-                    config.hidden_size,
-                    config.num_classes).to(device)
+    # Create Fully Connected Network (see details in FCNet.py)
+    net = FCNet().to(device)
     
     # Loss and Optimizer
     criterion = nn.CrossEntropyLoss()
-    optimizer = torch.optim.Adam(model.parameters(), lr=config.learning_rate)  
+    optimizer = torch.optim.Adam(net.parameters(), lr=config.learning_rate)  
     
     # Training model
     total_step = len(train_loader)
     for epoch in range(config.num_epochs):
         for i, (images, labels) in enumerate(train_loader):  
-            # move tensors into GPU for calculation
+            # Move tensors into GPU for calculation
             images = images.reshape(-1, 28*28).to(device)
             labels = labels.to(device)
             
             # Forward propagation
-            outputs = model(images)
+            outputs = net(images)
             loss = criterion(outputs, labels)
             
             # Back propagation and Optimization
@@ -67,10 +55,10 @@ def train():
             if (i+1) % 100 == 0:
                 print ('Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}' 
                     .format(epoch+1, config.num_epochs, i+1, total_step, loss.item())) 
-    # Save model
+    # Saving model
     if not os.path.exists(config.model_save_path):
-        os.mkdir(config.model_save_path)
-    torch.save(model.state_dict(), os.path.join(config.model_save_path, 'model.ckpt'))
+        os.makedirs(config.model_save_path)
+    torch.save(net, os.path.join(config.model_save_path, 'FCNet_model.ckpt'))
 
 if __name__ == "__main__":
 
