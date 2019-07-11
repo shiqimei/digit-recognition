@@ -40,8 +40,8 @@ class App extends React.Component {
           <Fabric />
         </Card>
         <div className='controls'>
-          <Button variant="contained" color="primary" onClick={this.onClearButtonClick}>清空</Button>
-          <Button variant="contained" color="primary" onClick={this.onSaveButtonClick}>保存</Button>
+          <Button variant="contained" color="primary" onClick={this.onSaveButtonClick}>保存图片</Button>
+          <Button variant="contained" color="primary" onClick={this.onClearButtonClick}>清空白板</Button>
         </div>
       </React.Fragment>
     );
