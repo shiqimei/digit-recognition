@@ -27,7 +27,12 @@ class App extends React.Component {
   onSaveButtonClick = () => {
     const { saveImage } = this.props;
     const canvas = document.querySelector('canvas');
-    saveImage(canvas);
+    const userAgent = window.navigator.userAgent;
+    if (userAgent.includes('Chrome/7')) {
+      saveImage(canvas);
+    } else {
+      alert('Oops！您的浏览器不支持此功能 :(');
+    }
   }
 
   render() {
