@@ -1,6 +1,5 @@
 import './App.css';
 import React from 'react';
-import ReactDOM from "react-dom";
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 

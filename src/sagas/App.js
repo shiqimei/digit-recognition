@@ -1,10 +1,10 @@
-import { put, takeLatest, all } from 'redux-saga/effects';
+import { takeLatest } from 'redux-saga/effects';
 import { APP } from '../actions/actionTypes';
 import { randomString } from '../utils';
 import { saveAs } from 'file-saver';
 
 const handleSaveImage = function* handleSaveImage({ canvas }) {
-	canvas.toBlob(blob => {
+	yield canvas.toBlob(blob => {
 		saveAs(blob, `${ randomString(20) }.png`);
 	});
 }
