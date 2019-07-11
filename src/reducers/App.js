@@ -1,5 +1,4 @@
-import * as types from '../actions/actionsTypes';
-import { statement } from '@babel/template';
+import * as types from '../actions/actionTypes';
 
 const initialState = {
 	isFetching: false,
