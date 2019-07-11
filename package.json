@@ -7,6 +7,7 @@
     "babel-core": "^6.26.3",
     "customize-cra": "^0.2.14",
     "fabric": "^3.2.0",
+    "file-saver": "^2.0.2",
     "react": "^16.8.6",
     "react-app-rewired": "^2.1.3",
     "react-dom": "^16.8.6",
