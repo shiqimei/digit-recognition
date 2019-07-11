@@ -6,3 +6,4 @@
 ## References
 1. [THE MNIST DATABASE of handwritten digits](http://yann.lecun.com/exdb/mnist/)
 2. [详解 MNIST 数据集](https://blog.csdn.net/simple_the_best/article/details/75267863)
+3. [Pytorch 保存模型与加载模型](https://zhuanlan.zhihu.com/p/38056115)
