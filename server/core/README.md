@@ -7,3 +7,5 @@
 1. [THE MNIST DATABASE of handwritten digits](http://yann.lecun.com/exdb/mnist/)
 2. [详解 MNIST 数据集](https://blog.csdn.net/simple_the_best/article/details/75267863)
 3. [Pytorch 保存模型与加载模型](https://zhuanlan.zhihu.com/p/38056115)
+4. [pytorch中torch.max函数用法](http://www.manongjc.com/article/35673.html)
+5. [Pytorch中Tensor与各种图像格式的相互转化](https://oldpan.me/archives/pytorch-tensor-image-transform)
