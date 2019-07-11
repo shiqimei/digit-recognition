@@ -20,19 +20,11 @@ def train():
                                             train=True, 
                                             transform=transforms.ToTensor(),  
                                             download=True)
-    
-    test_dataset = torchvision.datasets.MNIST(root=config.dataset_root, 
-                                            train=False, 
-                                            transform=transforms.ToTensor())
-    
+
     train_loader = torch.utils.data.DataLoader(dataset=train_dataset, 
                                             batch_size=config.batch_size, 
                                             shuffle=True)
-    
-    test_loader = torch.utils.data.DataLoader(dataset=test_dataset, 
-                                            batch_size=config.batch_size, 
-                                            shuffle=False)
-    
+
     # Fully Connected Neural Network with one hidden layer
     class NeuralNet(nn.Module):
         def __init__(self, input_size, hidden_size, num_classes):
