@@ -4,6 +4,9 @@
 
 .card-canvas {
   display: inline-block;
+  transform: scale(10);
+  margin-top: 140px;
+  margin-bottom: 140px;
 }
 
 .controls {
@@ -13,6 +16,14 @@
 .MuiButton-containedPrimary {
   margin-left: 10px!important;
   margin-right: 10px!important;
+}
+
+.MuiPaper-elevation1 {
+  box-shadow: 0px 0.2px 0.2px 0px rgba(0,0,0,0.2), 0px 0.2px 0.2px 0px rgba(0,0,0,0.14), 0px 0.2px 0.2px -0.2px rgba(0,0,0,0.12)!important;
+}
+
+.MuiPaper-rounded {
+  border-radius: 1px!important;
 }
 
 @keyframes App-logo-spin {
