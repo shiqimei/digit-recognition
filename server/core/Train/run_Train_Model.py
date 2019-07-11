@@ -10,13 +10,10 @@ import torchvision.transforms as transforms
 from Config import *
 from FCNet import *
 
-def train():
+# Use GPU if cuda is available
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    # Initialize configurations
-    config = Config()
-
-    # Use GPU if cuda is available
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+def train(config):
 
     # Load MNIST training dataset
     train_dataset = torchvision.datasets.MNIST(root=config.dataset_root, 
@@ -62,5 +59,8 @@ def train():
 
 if __name__ == "__main__":
 
+    # Initialize configurations
+    config = Config()
+
     # training handwritten digits recognition model, using GPU if it is available
-    train()
+    train(config)
