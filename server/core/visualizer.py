@@ -1,3 +1,7 @@
+"""
+Visualize the MNIST dataset
+"""
+
 import matplotlib.pyplot as plt
 from utils.load_mnist import load_mnist
 
