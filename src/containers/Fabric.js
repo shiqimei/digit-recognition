@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from "react-dom";
 import { connect } from 'react-redux';
-import { dataURIToBlob } from  '../utils';
 import {
 	RecognizeRequest as RecognizeRequestAction
 } from '../actions/App';
@@ -15,9 +14,9 @@ class Fabric extends React.Component {
 		const { RecognizeRequest } = this.props;
 		const fabricCanvas = window.fabricCanvas;
 		const el = ReactDOM.findDOMNode(this);
-		const blob = dataURIToBlob(fabricCanvas.toDataURL());
+		const imageBase64 = fabricCanvas.toDataURL();
 		fabricCanvas.initialize(el);
-		fabricCanvas.on('mouse:up', e => RecognizeRequest(blob))
+		fabricCanvas.on('mouse:up', e => RecognizeRequest(imageBase64))
 	}
 
 	render() {

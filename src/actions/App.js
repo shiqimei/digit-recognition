@@ -1,9 +1,9 @@
 import * as types from './actionTypes';
 
-export function RecognizeRequest(blob) {
+export function RecognizeRequest(imageBase64) {
 	return {
 		type: types.APP.RECOGNIZE_REQUEST,
-		blob
+		imageBase64
 	};
 }
 

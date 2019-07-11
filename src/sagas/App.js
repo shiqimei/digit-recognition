@@ -3,8 +3,8 @@ import { APP } from '../actions/actionTypes';
 import { randomString } from '../utils';
 import { saveAs } from 'file-saver';
 
-const handleRecognizeRequest = function* handleRecognizeRequest({ blob }) {
-	console.log(blob);
+const handleRecognizeRequest = function* handleRecognizeRequest({ imageBase64 }) {
+	console.log(imageBase64);
 }
 
 const handleSaveImage = function* handleSaveImage({ canvas }) {
