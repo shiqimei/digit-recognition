@@ -13,7 +13,6 @@ const handleRecognizeRequest = function* handleRecognizeRequest({ imageBase64 })
 	try {
 		const number = yield call(recognizeImage, imageBase64);
 		yield put(RecognizeSuccess(number));
-		console.log(number)
 	} catch (err) {
 		yield put(RecognizeFailed(err));
 		console.warn(err);
