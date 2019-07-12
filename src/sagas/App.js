@@ -1,10 +1,23 @@
-import { takeLatest } from 'redux-saga/effects';
+import { takeLatest, put, call } from 'redux-saga/effects';
 import { APP } from '../actions/actionTypes';
 import { randomString } from '../utils';
 import { saveAs } from 'file-saver';
+import API from '../lib/API';
+import {
+	RecognizeSuccess, RecognizeFailed
+} from '../actions/App';
+
+const recognizeImage = imageBase64 => API.recognizeImage(imageBase64);
 
 const handleRecognizeRequest = function* handleRecognizeRequest({ imageBase64 }) {
-	console.log(imageBase64);
+	try {
+		const number = yield call(recognizeImage, imageBase64);
+		yield put(RecognizeSuccess(number));
+		console.log(number)
+	} catch (err) {
+		yield put(RecognizeFailed(err));
+		console.warn(err);
+	}
 }
 
 const handleSaveImage = function* handleSaveImage({ canvas }) {
