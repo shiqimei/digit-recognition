@@ -9,7 +9,7 @@ class Config:
         self.input_size = 784
         self.hidden_size = 500
         self.num_classes = 10
-        self.num_epochs = 1
+        self.num_epochs = 50
         self.batch_size = 100
         self.learning_rate = 0.001
 
