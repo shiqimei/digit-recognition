@@ -7,7 +7,7 @@ import os, sys
 import torchvision
 import torchvision.transforms as transforms
 from Config import *
-os.chdir(os.path.dirname(__file__))
+import json
 sys.path.insert(0, os.path.abspath('..'))
 from utils.base64_to_tensor import base64_to_tensor
 
@@ -19,8 +19,6 @@ def recognize(config):
     # Load model
     net = torch.load(os.path.join(config.model_save_path, config.net))
     net = net.to(device) # Move the model to GPU for calculation
-
-    # evaluation mode
     net.eval()
 
     while 1:
@@ -29,8 +27,6 @@ def recognize(config):
 
         # Reshape
         image_tensor = image_tensor.view(-1, 28*28).to(device, dtype=torch.float)
-
-        torch.set_printoptions(linewidth=150)
         
         # Normalize
         image_tensor = image_tensor.type(torch.float) / 255
@@ -44,6 +40,7 @@ def recognize(config):
 
         # Output value
         print(result)
+
 
 if __name__ == "__main__":
 
