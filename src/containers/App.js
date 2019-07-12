@@ -22,6 +22,7 @@ class App extends React.Component {
   onClearButtonClick() {
     const fabricCanvas = window.fabricCanvas;
     fabricCanvas.clear();
+    fabricCanvas.backgroundColor = '#000000';
   }
 
   onSaveButtonClick = () => {

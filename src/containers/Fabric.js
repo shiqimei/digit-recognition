@@ -15,6 +15,8 @@ class Fabric extends React.Component {
 		const fabricCanvas = window.fabricCanvas;
 		const el = ReactDOM.findDOMNode(this);
 		fabricCanvas.initialize(el);
+		fabricCanvas.freeDrawingBrush.color = '#ffffff';
+		fabricCanvas.freeDrawingBrush.width = 2;
 		fabricCanvas.on('mouse:up', e => {
 			const imageBase64 = fabricCanvas.toDataURL();
 			RecognizeRequest(imageBase64)

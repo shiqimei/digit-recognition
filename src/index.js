@@ -15,7 +15,7 @@ window.fabricCanvas = new fabric.Canvas('drawing', {
 	width: 28,
 	height: 28,
 	isDrawingMode: true,
-	backgroundColor: '#ffffff'
+	backgroundColor: '#000000',
 });
 
 const rootElement = document.getElementById('root');
