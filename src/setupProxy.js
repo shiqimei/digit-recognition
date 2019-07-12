@@ -2,6 +2,7 @@ const proxy = require('http-proxy-middleware');
 
 module.exports = (app) => {
 	app.use(proxy('/api', {
-		target: 'http://localhost:30330/'
+		target: 'http://localhost:30330/',
+		pathRewrite: {'^/api' : ''},
 	}))
 };
