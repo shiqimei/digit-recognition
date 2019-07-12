@@ -40,13 +40,13 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        <StyledP>在白板上写一个 0~9 之间的数字，然后机器会猜测该数字并显示在下方。</StyledP>
+        <StyledP>在下方黑板中写一个 0~9 之间的数字，然后机器会尝试猜出该数字并显示在上方。</StyledP>
         <Card className='card-canvas'>
           <Fabric />
         </Card>
         <div className='controls'>
           <Button variant="contained" color="primary" onClick={this.onSaveButtonClick}>保存图片</Button>
-          <Button variant="contained" color="primary" onClick={this.onClearButtonClick}>清空白板</Button>
+          <Button variant="contained" color="primary" onClick={this.onClearButtonClick}>清除笔迹</Button>
         </div>
       </React.Fragment>
     );
