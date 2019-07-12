@@ -2,6 +2,6 @@ const proxy = require('http-proxy-middleware');
 
 module.exports = (app) => {
 	app.use(proxy('/api', {
-		target: 'baodu.com'
+		target: 'http://localhost:30330/'
 	}))
 };
