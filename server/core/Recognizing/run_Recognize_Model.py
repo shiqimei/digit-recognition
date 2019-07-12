@@ -7,6 +7,7 @@ import os, sys
 import torchvision
 import torchvision.transforms as transforms
 from Config import *
+os.chdir(os.path.dirname(__file__))
 sys.path.insert(0, os.path.abspath('..'))
 from utils.base64_to_tensor import base64_to_tensor
 
