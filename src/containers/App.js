@@ -10,6 +10,8 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Fabric from './Fabric';
 
+import GithubCorner from 'react-github-corner';
+
 import {
   SaveImage as SaveImageAction
 } from '../actions/App';
@@ -43,6 +45,7 @@ class App extends React.Component {
 
     return (
       <React.Fragment>
+        <GithubCorner href="https://github.com/lolimay/digit-recognition" />
         <Header />
         <Paper className='result-panel'>
           <Typography variant="h5" component="h3">
