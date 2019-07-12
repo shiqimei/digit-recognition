@@ -4,18 +4,23 @@ Convert base64 to tensor
 
 import base64
 import numpy as np
+from io import BytesIO
+from PIL import Image
+from torchvision import transforms
 import cv2
 import re
 import torch
 
-def base64_to_tensor():
-    image_base64 = input()
-    missing_padding = 4 - len(image_base64) % 4
+# "cuda"
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    if missing_padding:
-        image_base64 += (b'='* missing_padding).decode()
+# set max-width and threshold
+torch.set_printoptions(linewidth=150, threshold=np.inf)
 
-    image_base64_decoded = base64.b64decode(image_base64)
-    image_np_array = np.fromstring(image_base64_decoded, np.uint8)
-
-    return torch.from_numpy(image_np_array).view(-1, 28, 28)
+def base64_to_tensor(base64_string):
+    base64_decoded = base64.b64decode(base64_string)
+    image = Image.open(BytesIO(base64_decoded))
+    image = image.convert('L') # convert image to grey
+    image_np_array = np.array(image)
+    tensor = torch.from_numpy(image_np_array)
+    return tensor
