@@ -10,20 +10,23 @@ from Config import *
 import json
 sys.path.insert(0, os.path.abspath('..'))
 from utils.base64_to_tensor import base64_to_tensor
+from flask import Flask, request
 
 # Use GPU if cuda is available
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-def recognize(config):
+# Load configrations
+config = Config()
 
-    # Load model
-    net = torch.load(os.path.join(config.model_save_path, config.net))
-    net = net.to(device) # Move the model to GPU for calculation
-    net.eval()
+# Load model
+net = torch.load(os.path.join(config.model_save_path, config.net))
+net = net.to(device) # Move the model to GPU for calculation
+net.eval()
 
+def recognize(base64_string):
     while 1:
         # Load image tensor from base64 string
-        image_tensor = base64_to_tensor(input())
+        image_tensor = base64_to_tensor(base64_string)
 
         # Reshape
         image_tensor = image_tensor.view(-1, 28*28).to(device, dtype=torch.float)
@@ -38,13 +41,26 @@ def recognize(config):
         # Predicted value
         result = predicted.item()
 
-        # Output value
-        print(result)
+        # return the value
+        return result
 
+def flaskServer(PORT=4000):
+    app = Flask(__name__)
+
+    @app.route('/', methods=['POST'])
+    def hello():
+        base64 = request.data
+
+        # Recognize
+        if base64 != None:
+            return json.dumps(recognize(base64))
+
+    app.run(host='0.0.0.0', port=PORT)
 
 if __name__ == "__main__":
 
-    config = Config()
+    # HTTP server port
+    PORT = 30330
 
-    # recognizing handwritten digit with trained model
-    recognize(config)
+    # Start flask
+    flaskServer(PORT)
