@@ -16,6 +16,7 @@
 .MuiButton-containedPrimary {
   margin-left: 10px!important;
   margin-right: 10px!important;
+  background: #4CAF50!important;
 }
 
 .MuiPaper-elevation1 {
@@ -24,6 +25,12 @@
 
 .MuiPaper-rounded {
   border-radius: 1px!important;
+}
+
+.result-panel {
+  max-width: 250px;
+  margin: 10px auto 20px;
+  padding: 15px 20px;
 }
 
 @keyframes App-logo-spin {
