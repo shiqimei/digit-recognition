@@ -5,12 +5,10 @@
 .card-canvas {
   display: inline-block;
   transform: scale(10);
-  margin-top: 140px;
-  margin-bottom: 140px;
 }
 
 .controls {
-  margin-top: 20px;
+  margin-top: 140px;
 }
 
 .MuiButton-containedPrimary {

@@ -18,7 +18,7 @@ const headerStyle = {
 	display: 'flex',
 	justifyContent: 'center',
 	alignItems: 'center',
-	marginTop: 50,
+	marginTop: 40,
 	marginBottom: 20
 }
 
@@ -27,7 +27,7 @@ const Logo = styled.img`
 `;
 
 const Title = styled.span`
-	color: #bbbbbb;
+	color: rgba(0, 0, 0, 0.87);
 	font-size: 40px;
 	font-weight: 700;
 `;
