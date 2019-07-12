@@ -27,7 +27,7 @@ const Logo = styled.img`
 `;
 
 const Title = styled.span`
-	color: rgba(0, 0, 0, 0.87);
+	color: #bbbbbb;
 	font-size: 40px;
 	font-weight: 700;
 `;

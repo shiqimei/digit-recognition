@@ -6,6 +6,8 @@ import styled from 'styled-components';
 import Header from './Header';
 import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 import Fabric from './Fabric';
 
 import {
@@ -13,7 +15,7 @@ import {
 } from '../actions/App';
 
 @connect(state => ({
-
+  number: state.App.number
 }), dispatch => ({
   saveImage: canvas => dispatch(SaveImageAction(canvas))
 }))
@@ -37,10 +39,17 @@ class App extends React.Component {
   }
 
   render() {
+    const { number } = this.props;
+
     return (
       <React.Fragment>
         <Header />
-        <StyledP>在下方黑板中写一个 0~9 之间的数字，然后机器会尝试猜出该数字并显示在上方。</StyledP>
+        <Paper className='result-panel'>
+          <Typography variant="h5" component="h3">
+            你写的是数字 {number} 吗？
+        </Typography>
+        </Paper>
+        <StyledP>在下方黑板中写一个 0~9 之间的数字，然后机器会尝试猜出该数字并显示在正上方。</StyledP>
         <Card className='card-canvas'>
           <Fabric />
         </Card>
@@ -54,7 +63,7 @@ class App extends React.Component {
 }
 
 const StyledP = styled.p`
-  max-width: 300px;
+  max-width: 305px;
   margin: 0 auto 20px;
 `;
 
