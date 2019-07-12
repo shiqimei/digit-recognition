@@ -49,7 +49,7 @@ class App extends React.Component {
         <Header />
         <Paper className='result-panel'>
           <Typography variant="h5" component="h3">
-            你写的是数字 {number} 吗？
+            你写的是数字 <StyledSpan>{number}</StyledSpan> 吗？
         </Typography>
         </Paper>
         <StyledP>在下方黑板中写一个 0~9 之间的数字，然后机器会尝试猜出该数字并显示在正上方。</StyledP>
@@ -68,6 +68,11 @@ class App extends React.Component {
 const StyledP = styled.p`
   max-width: 305px;
   margin: 0 auto 140px;
+`;
+
+const StyledSpan = styled.span`
+  color: #e36209;
+  font-weight: 700;
 `;
 
 export default App;
