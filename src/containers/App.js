@@ -40,6 +40,10 @@ class App extends React.Component {
     }
   }
 
+  onReadeSourceClick = () => {
+    window.open('https://github.com/lolimay/digit-recognition/tree/master/server');
+  }
+
   render() {
     const { number } = this.props;
 
@@ -59,6 +63,9 @@ class App extends React.Component {
         <div className='controls'>
           <Button variant="contained" color="primary" onClick={this.onSaveButtonClick}>保存图片</Button>
           <Button variant="contained" color="primary" onClick={this.onClearButtonClick}>清除笔迹</Button>
+        </div>
+        <div className='list-button'>
+          <Button variant="contained" color="default" onClick={this.onReadeSourceClick}>查看源码</Button>
         </div>
       </React.Fragment>
     );
