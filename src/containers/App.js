@@ -41,7 +41,7 @@ class App extends React.Component {
   }
 
   onReadeSourceClick = () => {
-    window.open('https://github.com/lolimay/digit-recognition/tree/master/server');
+    window.open('https://github.com/lolimay/digit-recognition');
   }
 
   render() {
