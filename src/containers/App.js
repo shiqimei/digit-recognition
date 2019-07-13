@@ -79,7 +79,7 @@ const pStyle = {
 
 const StyledP = styled.p`
   max-width: 305px;
-  margin: 0 auto 140px;
+  margin: 0 auto 100px;
 `;
 
 const StyledSpan = styled.span`
