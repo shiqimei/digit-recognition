@@ -25,10 +25,22 @@
   border-radius: 1px!important;
 }
 
+.list-button {
+  margin-top: 10px;
+}
+
+.list-button button {
+  min-width: 200px!important;
+}
+
 .result-panel {
   max-width: 250px;
   margin: 10px auto 20px;
   padding: 15px 20px;
+}
+
+.MuiPaper-rounded {
+  border-radius: 0.5px!important;
 }
 
 @keyframes App-logo-spin {
