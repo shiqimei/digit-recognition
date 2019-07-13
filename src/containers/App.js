@@ -67,10 +67,15 @@ class App extends React.Component {
         <div className='list-button'>
           <Button variant="contained" color="default" onClick={this.onReadeSourceClick}>查看源码</Button>
         </div>
+        <p style={pStyle}>Powered with ❤ by <StyledLink href="https://github.com/lolimay">lolimay</StyledLink>.</p>
       </React.Fragment>
     );
   }
 }
+
+const pStyle = {
+  marginTop: 50
+};
 
 const StyledP = styled.p`
   max-width: 305px;
@@ -80,6 +85,11 @@ const StyledP = styled.p`
 const StyledSpan = styled.span`
   color: #e36209;
   font-weight: 700;
+`;
+
+const StyledLink = styled.a`
+  color: #26aafe;
+  text-decoration: none;
 `;
 
 export default App;
